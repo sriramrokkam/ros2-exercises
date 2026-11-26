@@ -11,10 +11,11 @@ A comprehensive, progressive learning series for ROS2 development with hands-on 
    - Publish messages on a topic
    - **Status**: ✅ Complete
 
-2. **02-Simple-Subscriber** - Create a subscriber node (Coming soon)
+2. **[02-Simple-Subscriber](./02-Simple-Subscriber/START_HERE.txt)** - Create a subscriber node
    - Subscribe to messages
    - Callback mechanisms
    - Message handling
+   - **Status**: ✅ Complete
 
 3. **03-Pub-Sub-Communication** - Publisher and subscriber together (Coming soon)
    - Multiple nodes communicating
@@ -110,7 +111,14 @@ ros2-exercises/
 │   │   └── arduinobot_py_example/
 │   │       └── simple_publisher.py
 │   └── [other documentation files]
-├── 02-Simple-Subscriber/             # Exercise 2 (Future)
+├── 02-Simple-Subscriber/             # Exercise 2 (Complete)
+│   ├── START_HERE.txt               # Quick entry point
+│   ├── TESTING_GUIDE.md             # How to test
+│   ├── MAIN_FUNCTION_GUIDE.md       # Code explanation
+│   ├── src/
+│   │   └── arduinobot_py_example/
+│   │       └── simple_subscriber.py
+│   └── [other documentation files]
 ├── 03-Pub-Sub-Communication/         # Exercise 3 (Future)
 └── [Additional exercises...]
 ```
@@ -239,11 +247,11 @@ This project is licensed under the Apache License 2.0 - see [LICENSE](./LICENSE)
 ```
 Beginner                Intermediate           Advanced              Expert
    |                        |                      |                   |
-00-Getting-Started ─► 01-Publisher ─► 04-Messages ─► 07-Callbacks ─► 10-Simulation
+00-Getting-Started ─► 01-Publisher ─► 03-PubSub ─► 07-Callbacks ─► 10-Simulation
                          │                │               │               │
                      02-Subscriber    05-Services      08-Lifecycle   11-Real Robot
                          │                │               │               │
-                     03-Pub/Sub       06-Parameters   09-Testing     12-Integration
+                                       04-Messages      06-Params     12-Integration
 ```
 
 ---
@@ -262,6 +270,8 @@ After completing all exercises, you can:
 ## 📊 Statistics
 
 - **Total Exercises**: 12 (3 levels + 1 advanced)
+- **Exercises Complete**: 2 (01-Publisher, 02-Subscriber)
+- **Exercises In Progress**: 1 (03-Pub-Sub)
 - **Estimated Time**: 40-60 hours
 - **Languages**: Python and C++
 - **Documentation Pages**: 50+
