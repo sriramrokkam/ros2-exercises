@@ -1,11 +1,11 @@
 # Import ROS2 client library for Python
-import rcply
+import rclpy
 # Import the base Node class to inherit from
-from rcply.node import node
+from rclpy.node import Node
 # Import the standard String message type
 from std_msgs.msg import String
 
-class SimplePublisher(node):
+class SimplePublisher(Node):
     # Initialize the publisher node with necessary attributes
     def __init__(self):
         # Call parent Node class constructor with node name 'simple_publisher'
