@@ -59,12 +59,12 @@ Choose based on what you want to do:
 Want to see it working RIGHT NOW? Do this:
 
 Terminal 1:
-  cd /sapmnt/home/I310202/Desktop/01-ROS2
+  cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
   source install/setup.bash
   ros2 run arduinobot_py_example simple_publisher
 
 Terminal 2:
-  cd /sapmnt/home/I310202/Desktop/01-ROS2
+  cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
   source install/setup.bash
   ros2 topic echo /chatter
 
@@ -148,7 +148,7 @@ After reading the documentation and running tests:
 📍 KEY FILES AT A GLANCE
 ═══════════════════════════════════════════════════════════════════════════
 
-Location: /sapmnt/home/I310202/Desktop/01-ROS2/
+Location: /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/
 
 START_HERE.txt (you are here)
   ↓

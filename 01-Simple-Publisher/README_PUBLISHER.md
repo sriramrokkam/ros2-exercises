@@ -55,7 +55,7 @@ Both the Python and C++ implementations follow the same logical flow:
 
 ### **File Location:**
 ```
-/sapmnt/home/I310202/Desktop/01-ROS2/src/arduinobot_py_example/
+/sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/src/arduinobot_py_example/
   └── arduinobot_py_example/
       └── simple_publisher.py
 ```
@@ -78,7 +78,7 @@ Both the Python and C++ implementations follow the same logical flow:
 
 ```bash
 # Terminal 1 - Run the publisher
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 run arduinobot_py_example simple_publisher
 
@@ -93,7 +93,7 @@ ros2 run arduinobot_py_example simple_publisher
 
 ```bash
 # Terminal 2 - Subscribe to messages
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 topic echo /chatter
 
@@ -110,7 +110,7 @@ ros2 topic echo /chatter
 
 ```bash
 # Terminal 3 - View topic details
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 topic list              # List all active topics
 ros2 topic info /chatter     # Get info about the 'chatter' topic
@@ -121,7 +121,7 @@ ros2 topic hz /chatter       # Measure publishing rate
 #### **Method 4: Run test suite**
 
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 colcon test --packages-select arduinobot_py_example
 ```
 
@@ -131,7 +131,7 @@ colcon test --packages-select arduinobot_py_example
 
 ### **File Location:**
 ```
-/sapmnt/home/I310202/Desktop/01-ROS2/src/arduinobot_cpp_example/
+/sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/src/arduinobot_cpp_example/
   └── (C++ source files would be here)
 ```
 
@@ -140,7 +140,7 @@ colcon test --packages-select arduinobot_py_example
 #### **Step 1: Build the C++ Package**
 
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 colcon build --packages-select arduinobot_cpp_example
 source install/setup.bash
 ```
@@ -173,7 +173,7 @@ ros2 topic echo /chatter
 
 ```bash
 # Step 1: Navigate to workspace
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 
 # Step 2: Source the setup (do this in every new terminal)
 source install/setup.bash

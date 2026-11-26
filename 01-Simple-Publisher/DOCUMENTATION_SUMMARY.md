@@ -50,7 +50,7 @@ Three comprehensive guides have been created to help you understand and test the
 
 ```bash
 # 1. Navigate to workspace
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 
 # 2. Source ROS2 setup
 source install/setup.bash
@@ -59,7 +59,7 @@ source install/setup.bash
 ros2 run arduinobot_py_example simple_publisher
 
 # In another terminal, listen to messages:
-source /sapmnt/home/I310202/Desktop/01-ROS2/install/setup.bash
+source /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/install/setup.bash
 ros2 topic echo /chatter
 ```
 
@@ -78,7 +78,7 @@ ros2 topic echo /chatter
 ## 📂 File Locations
 
 ```
-/sapmnt/home/I310202/Desktop/01-ROS2/
+/sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/
 ├── README_PUBLISHER.md          (Comprehensive guide)
 ├── TESTING_GUIDE.md              (Practical testing)
 ├── MAIN_FUNCTION_GUIDE.md        (Deep understanding)
@@ -133,7 +133,7 @@ After reading the documentation:
 
 ### **Build**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 colcon build
 ```
 
@@ -172,7 +172,7 @@ ros2 topic list
 ## 🆘 Common Questions
 
 **Q: Where is the publisher code?**
-A: `/sapmnt/home/I310202/Desktop/01-ROS2/src/arduinobot_py_example/arduinobot_py_example/simple_publisher.py`
+A: `/sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/src/arduinobot_py_example/arduinobot_py_example/simple_publisher.py`
 
 **Q: How often does it publish?**
 A: Every 1 second (1 Hz frequency)

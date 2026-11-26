@@ -15,14 +15,14 @@
 
    Terminal 1:
    ───────────────────────────────────────────────────────────────────
-   cd /sapmnt/home/I310202/Desktop/01-ROS2
+   cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
    source install/setup.bash
    ros2 run arduinobot_py_example simple_publisher
    ───────────────────────────────────────────────────────────────────
 
    Terminal 2:
    ───────────────────────────────────────────────────────────────────
-   cd /sapmnt/home/I310202/Desktop/01-ROS2
+   cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
    source install/setup.bash
    ros2 topic echo /chatter
    ───────────────────────────────────────────────────────────────────
@@ -123,11 +123,11 @@
 🎯 KEY FILES:
 
    Source Code:
-   /sapmnt/home/I310202/Desktop/01-ROS2/src/arduinobot_py_example/
+   /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/src/arduinobot_py_example/
    arduinobot_py_example/simple_publisher.py
 
    Documentation:
-   /sapmnt/home/I310202/Desktop/01-ROS2/
+   /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/
    ├─ DOCUMENTATION_SUMMARY.md
    ├─ TESTING_GUIDE.md
    ├─ MAIN_FUNCTION_GUIDE.md
@@ -138,10 +138,10 @@
 💡 QUICK COMMANDS:
 
    # Build everything
-   cd /sapmnt/home/I310202/Desktop/01-ROS2 && colcon build
+   cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher && colcon build
 
    # Source ROS2 setup (required in every terminal)
-   source /sapmnt/home/I310202/Desktop/01-ROS2/install/setup.bash
+   source /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/install/setup.bash
 
    # Run Python publisher
    ros2 run arduinobot_py_example simple_publisher
@@ -222,6 +222,6 @@
 ═══════════════════════════════════════════════════════════════════════════
 
 For detailed information, refer to the documentation files in:
-/sapmnt/home/I310202/Desktop/01-ROS2/
+/sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/
 
 Happy Learning! 🎉

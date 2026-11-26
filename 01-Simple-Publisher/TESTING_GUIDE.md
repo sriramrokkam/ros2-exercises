@@ -4,7 +4,7 @@
 
 ### **Setup (Do Once)**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ```
 
@@ -14,7 +14,7 @@ source install/setup.bash
 
 ### **Terminal 1 - Start the Publisher**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 run arduinobot_py_example simple_publisher
 ```
@@ -36,14 +36,14 @@ ros2 run arduinobot_py_example simple_publisher
 
 ### **Terminal 1 - Run Publisher**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 run arduinobot_py_example simple_publisher
 ```
 
 ### **Terminal 2 - Listen to Messages**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 topic echo /chatter
 ```
@@ -66,21 +66,21 @@ data: 'Hello, world! 2'
 
 ### **Terminal 1 - Run Publisher**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 run arduinobot_py_example simple_publisher
 ```
 
 ### **Terminal 2 - View Messages**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 topic echo /chatter
 ```
 
 ### **Terminal 3 - Monitor Publish Rate**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 topic hz /chatter
 ```
@@ -100,7 +100,7 @@ average rate: 1.000
 
 ### **Terminal - Check Topic Details**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 
 # List all topics
@@ -126,21 +126,21 @@ Subscription count: 1
 
 ### **Terminal 1 - Run First Python Publisher**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 run arduinobot_py_example simple_publisher
 ```
 
 ### **Terminal 2 - Run Second Python Publisher** (Optional)
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 run arduinobot_py_example simple_publisher
 ```
 
 ### **Terminal 3 - Listen to All Messages**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 source install/setup.bash
 ros2 topic echo /chatter
 ```
@@ -152,7 +152,7 @@ ros2 topic echo /chatter
 ## ⚙️ Test Scenario 6: Run Unit Tests
 
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 colcon test --packages-select arduinobot_py_example
 ```
 
@@ -170,7 +170,7 @@ Summary: 1 package finished [X.XXs]
 
 ### **Build C++ Package**
 ```bash
-cd /sapmnt/home/I310202/Desktop/01-ROS2
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
 colcon build --packages-select arduinobot_cpp_example
 source install/setup.bash
 ```
@@ -182,7 +182,7 @@ ros2 run arduinobot_cpp_example simple_publisher
 
 ### **In Another Terminal - Listen**
 ```bash
-source /sapmnt/home/I310202/Desktop/01-ROS2/install/setup.bash
+source /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher/install/setup.bash
 ros2 topic echo /chatter
 ```
 
