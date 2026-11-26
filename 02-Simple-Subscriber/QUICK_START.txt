@@ -1,0 +1,186 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║          🏃 QUICK START - 5 MINUTE REFERENCE FOR SUBSCRIBERS 🏃           ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+SUPER QUICK TEST (60 SECONDS)
+═══════════════════════════════════════════════════════════════════════════
+
+Terminal 1 - Run the Publisher (from 01-Simple-Publisher):
+  $ cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
+  $ source install/setup.bash
+  $ ros2 run arduinobot_py_example simple_publisher
+
+Terminal 2 - Run the Subscriber (from this folder):
+  $ cd /sapmnt/home/I310202/Desktop/ros2-exercises/02-Simple-Subscriber
+  $ source install/setup.bash
+  $ ros2 run arduinobot_py_example simple_subscriber
+
+EXPECTED OUTPUT:
+Terminal 1: "Published message #1", "Published message #2", ...
+Terminal 2: "Received message #1: Hello, world! 0", "Received message #2: Hello, world! 1", ...
+
+✓ Working! Now read the documentation to understand it.
+
+
+COMMONLY USED COMMANDS
+═══════════════════════════════════════════════════════════════════════════
+
+Setup and Build:
+  cd /sapmnt/home/I310202/Desktop/ros2-exercises/02-Simple-Subscriber
+  colcon build --packages-select arduinobot_py_example
+  source install/setup.bash
+
+Run the Subscriber:
+  ros2 run arduinobot_py_example simple_subscriber
+
+Monitoring Commands:
+  ros2 topic list                    # List all active topics
+  ros2 topic info /chatter           # Get info about /chatter topic
+  ros2 topic hz /chatter             # Measure message rate
+  ros2 node list                     # List all running nodes
+  ros2 node info /simple_subscriber  # Get subscriber node info
+
+
+QUICK FACTS ABOUT SUBSCRIBERS
+═══════════════════════════════════════════════════════════════════════════
+
+🔹 What is a Subscriber?
+   - A node that listens to messages on a topic
+   - Receives messages sent by publishers
+   - Automatically calls a callback function when messages arrive
+
+🔹 The 5 Steps in main():
+   1. rclpy.init(args=args)         → Initialize ROS2
+   2. node = SimpleSubscriber()     → Create subscriber node
+   3. rclpy.spin(node)              → Listen (runs forever!)
+   4. node.destroy_node()           → Cleanup
+   5. rclpy.shutdown()              → Shutdown ROS2
+
+🔹 Key Methods:
+   - create_subscription()  → Start listening to a topic
+   - listener_callback()    → Function called when message arrives
+
+🔹 The Callback Flow:
+   1. Publisher sends message to /chatter topic
+   2. Subscriber receives the message
+   3. listener_callback() is automatically called
+   4. Message data is processed
+   5. Counter increments and message is logged
+
+
+FILE STRUCTURE
+═══════════════════════════════════════════════════════════════════════════
+
+02-Simple-Subscriber/
+├── START_HERE.txt                    ← You are here!
+├── QUICK_START.txt                   ← This file
+├── DOCUMENTATION_SUMMARY.md          ← Navigation guide
+├── TESTING_GUIDE.md                  ← 7 test scenarios
+├── MAIN_FUNCTION_GUIDE.md            ← Detailed explanation
+├── README_SUBSCRIBER.md              ← Complete reference
+└── src/
+    └── arduinobot_py_example/
+        ├── setup.py                  ← Package configuration
+        ├── package.xml               ← ROS2 package definition
+        └── arduinobot_py_example/
+            └── simple_subscriber.py  ← The actual code (48 lines)
+
+
+KEY CODE SNIPPETS
+═══════════════════════════════════════════════════════════════════════════
+
+Create a Subscription:
+  self.subscription = self.create_subscription(
+      String,                    # Message type
+      'chatter',                # Topic name
+      self.listener_callback,   # Callback function
+      10)                       # Queue size
+
+The Callback Function:
+  def listener_callback(self, msg):
+      self.counter += 1
+      self.get_logger().info(f'Received message #{self.counter}: {msg.data}')
+
+
+COMMON ISSUES AND FIXES
+═══════════════════════════════════════════════════════════════════════════
+
+Issue: "Received message #1" never appears
+  ↓ Solution: Run the publisher in Terminal 1 first
+
+Issue: "No ROS2 environment" error
+  ↓ Solution: Run: source /opt/ros/humble/setup.bash
+
+Issue: "Package not found"
+  ↓ Solution: Run: colcon build && source install/setup.bash
+
+Issue: Module not found 'rclpy'
+  ↓ Solution: Make sure ROS2 is installed and setup.bash is sourced
+
+Issue: Multiple subscribers receiving same message
+  ↓ This is NORMAL! All subscribers get every message
+
+
+NEXT STEPS
+═══════════════════════════════════════════════════════════════════════════
+
+1. Run the quick test above ↑
+2. Read MAIN_FUNCTION_GUIDE.md for detailed explanation
+3. Try modifying the code:
+   - Change the queue size
+   - Change the callback message format
+   - Add more logging
+4. Run the test scenarios in TESTING_GUIDE.md
+
+
+TESTING QUICK REFERENCE
+═══════════════════════════════════════════════════════════════════════════
+
+Basic Test:
+  Terminal 1: ros2 run arduinobot_py_example simple_publisher
+  Terminal 2: ros2 run arduinobot_py_example simple_subscriber
+  ✓ Should see "Received message #N" in Terminal 2
+
+Multiple Subscribers Test:
+  Terminal 1: ros2 run arduinobot_py_example simple_publisher
+  Terminal 2: ros2 run arduinobot_py_example simple_subscriber
+  Terminal 3: ros2 run arduinobot_py_example simple_subscriber
+  ✓ Both subscribers should receive the same messages
+
+Echo Test (Alternative):
+  Terminal 1: ros2 run arduinobot_py_example simple_publisher
+  Terminal 2: ros2 topic echo /chatter
+  ✓ Should see: "data: 'Hello, world! 0'"
+
+
+DOCUMENTATION MAP
+═══════════════════════════════════════════════════════════════════════════
+
+START_HERE.txt (This folder)
+  → QUICK_START.txt (You are here)
+     → MAIN_FUNCTION_GUIDE.md (10-30 min read)
+        → TESTING_GUIDE.md (Try the tests)
+           → README_SUBSCRIBER.md (Reference)
+              → DOCUMENTATION_SUMMARY.md (Navigation hub)
+
+
+FOR MORE INFORMATION
+═══════════════════════════════════════════════════════════════════════════
+
+- Full code walkthrough:     See MAIN_FUNCTION_GUIDE.md
+- All test scenarios:        See TESTING_GUIDE.md
+- Complete reference:        See README_SUBSCRIBER.md
+- Troubleshooting:          See README_SUBSCRIBER.md → Troubleshooting
+- Learning paths:           See DOCUMENTATION_SUMMARY.md
+- Compare with Publisher:   See 01-Simple-Publisher/MAIN_FUNCTION_GUIDE.md
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+                    Ready to run your first test? 👇
+                   Follow the "SUPER QUICK TEST" above!
+
+═══════════════════════════════════════════════════════════════════════════
