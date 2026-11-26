@@ -2,20 +2,36 @@
 
 A comprehensive, progressive learning series for ROS2 development with hands-on exercises and comprehensive documentation.
 
+## ✨ What We've Built
+
+**Working Pub-Sub Communication System** ✅
+- Publisher node that publishes messages every 1 second
+- Subscriber node that receives and processes messages
+- 7 comprehensive test scenarios
+- Complete documentation and learning paths
+- Full source code with detailed comments
+- Ready for learning and experimentation
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for complete system design and diagrams.
+
+---
+
 ## 📚 Exercises
 
 ### Level 1: Fundamentals
-1. **[01-Simple-Publisher](./01-Simple-Publisher/README.md)** - Create a basic publisher node
+1. **[01-Simple-Publisher](./01-Simple-Publisher/START_HERE.txt)** - Create a basic publisher node
    - Learn how the main() function works
    - Understand node initialization
    - Publish messages on a topic
-   - **Status**: ✅ Complete
+   - **Status**: ✅ Complete & Tested
+   - **Code**: 58 lines | **Docs**: 6 files | **Tests**: Built-in
 
 2. **[02-Simple-Subscriber](./02-Simple-Subscriber/START_HERE.txt)** - Create a subscriber node
    - Subscribe to messages
    - Callback mechanisms
    - Message handling
-   - **Status**: ✅ Complete
+   - **Status**: ✅ Complete & Tested
+   - **Code**: 48 lines | **Docs**: 6 files | **Tests**: 7 scenarios
 
 3. **03-Pub-Sub-Communication** - Publisher and subscriber together (Coming soon)
    - Multiple nodes communicating
@@ -39,6 +55,33 @@ A comprehensive, progressive learning series for ROS2 development with hands-on 
 
 ---
 
+## 🏗️ System Architecture
+
+### Quick Architecture Diagram
+
+```
+┌─────────────────────────────────────────────────┐
+│          ROS2 Pub-Sub System (Working)          │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│  Publisher Node ───→ /chatter Topic ──→ Subscriber Node
+│  (Exercise 01)      (std_msgs/String)  (Exercise 02)
+│                     1 Hz (1 msg/sec)
+│
+│  Message Format: "Hello, world! {counter}"
+│  
+│  ✅ Messages flowing correctly
+│  ✅ All tests passing
+│  ✅ Error handling verified
+│  ✅ Multiple subscribers supported
+│
+└─────────────────────────────────────────────────┘
+```
+
+**For detailed architecture, diagrams, and components, see [ARCHITECTURE.md](./ARCHITECTURE.md)**
+
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -47,23 +90,141 @@ A comprehensive, progressive learning series for ROS2 development with hands-on 
 - Python 3.10+
 - Git
 
-### Setup
+## 🚀 Quick Start: Run the Working System
+
+### Prerequisites
+- Ubuntu 22.04 or later
+- ROS2 Humble installed
+- Python 3.10+
+- Git
+
+### Run Publisher (Terminal 1)
 
 ```bash
-# 1. Source ROS2 setup
 source /opt/ros/humble/setup.bash
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
+source install/setup.bash
+ros2 run arduinobot_py_example simple_publisher
+```
 
-# 2. Navigate to an exercise
-cd 01-Simple-Publisher
+### Run Subscriber (Terminal 2)
 
-# 3. Build the packages
-colcon build
+```bash
+source /opt/ros/humble/setup.bash
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/02-Simple-Subscriber
+source install/setup.bash
+ros2 run arduinobot_py_example simple_subscriber
+```
 
-# 4. Source the install space
+### Expected Output
+
+**Publisher**:
+```
+[INFO] [simple_publisher]: SimplePublisher node initialized
+[INFO] [simple_publisher]: Published message #1
+[INFO] [simple_publisher]: Published message #2
+[INFO] [simple_publisher]: Published message #3
+...
+```
+
+**Subscriber**:
+```
+[INFO] [simple_subscriber]: SimpleSubscriber node initialized
+[INFO] [simple_subscriber]: Received message #1: Hello, world! 0
+[INFO] [simple_subscriber]: Received message #2: Hello, world! 1
+[INFO] [simple_subscriber]: Received message #3: Hello, world! 2
+...
+```
+
+✅ **Success!** You're now running a ROS2 pub-sub system!
+
+---
+
+## 🎓 Getting Started (Choose One)
+
+**I want to quickly see it work** (5 min):
+```bash
+Follow "Quick Start: Run the Working System" above
+```
+
+**I want to understand the code** (30 min):
+```bash
+1. Read: 01-Simple-Publisher/QUICK_START.txt
+2. Read: 02-Simple-Subscriber/MAIN_FUNCTION_GUIDE.md
+3. Run the working system above
+```
+
+**I want complete mastery** (2+ hours):
+```bash
+1. Start with: 01-Simple-Publisher/START_HERE.txt
+2. Then: 02-Simple-Subscriber/START_HERE.txt
+3. Run all tests in TESTING_GUIDE.md
+4. Study and modify the code
+```
+
+---
+
+## 📊 What's Included
+
+### Code (106 lines total)
+- **Publisher** (01-Simple-Publisher): 58 lines of well-commented Python
+- **Subscriber** (02-Simple-Subscriber): 48 lines of well-commented Python
+- Both fully functional and tested
+
+### Documentation (100+ KB)
+- **12 documentation files** (6 per exercise)
+- **7 test scenarios** in TESTING_GUIDE.md
+- **Multiple learning paths** (5 min to 2+ hours)
+- **Architecture diagrams** in ARCHITECTURE.md
+- **Deep code explanations** in MAIN_FUNCTION_GUIDE.md
+
+### Testing
+- ✅ Basic communication test
+- ✅ Multiple subscribers test
+- ✅ Message rate measurement
+- ✅ Topic monitoring
+- ✅ Node inspection
+- ✅ Error handling
+- ✅ Full integration test
+
+---
+
+## 📖 Documentation Structure
+
+Each exercise includes:
+- `START_HERE.txt` - Quick navigation guide
+- `QUICK_START.txt` - 5-minute reference
+- `MAIN_FUNCTION_GUIDE.md` - Deep code explanation  
+- `TESTING_GUIDE.md` - 7 comprehensive tests
+- `README.md` - Complete reference
+- `DOCUMENTATION_SUMMARY.md` - Learning paths
+
+---
+
+## 🏃 Next Steps
+
+1. ✅ Run the quick start above
+2. 📖 Choose a learning path
+3. 🧪 Run the test scenarios  
+4. 🔍 Study the code
+5. ✏️ Modify and experiment
+
+---
+
+## 🔧 Setup (if building from scratch)
+
+```bash
+# Navigate to publisher
+cd /sapmnt/home/I310202/Desktop/ros2-exercises/01-Simple-Publisher
+
+# Build
+colcon build --packages-select arduinobot_py_example
+
+# Source the install space
 source install/setup.bash
 
-# 5. Run the exercise
-ros2 run arduinobot_py_example simple_publisher
+# Source ROS2
+source /opt/ros/humble/setup.bash
 ```
 
 ### Verify Installation
